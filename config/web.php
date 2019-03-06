@@ -6,6 +6,7 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'fide',
     'name' => 'FIDE',
+    'defaultRoute' => 'site/index',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -13,15 +14,24 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'language' => 'ru-RU',
         'request' => [
+            'class' => 'app\components\LangRequest',
+            // site root directory
+            'baseUrl' => '',
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'ckm1D3CjcsnHAwSSgVWvy9MypurbnZzp',
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
-            ],
+            'class'=>'app\components\LangUrlManager',
+            'rules'=>[
+                'index' => 'site/index',
+                'about' => 'site/about',
+                'contact' => 'site/contact',
+                'login' => 'site/login',
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -50,6 +60,20 @@ $config = [
             ],
         ],
         'db' => $db,
+        'i18n' => [
+            'translations' => [
+                'app' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'forceTranslation' => true,
+                    'sourceLanguage' => 'en-US',
+                ],
+            ],
+        ],
+        'formatter' => [
+            'datetimeFormat' => 'dd.MM.Y HH:mm',
+            'timeZone' => 'UTC',
+        ],
     ],
     'params' => $params,
 ];
