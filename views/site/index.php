@@ -2,10 +2,9 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'FIDE';
 ?>
 <div class="site-index">
-
     <div class="jumbotron">
         <h1>Welcome to FIDE!</h1>
     </div>

@@ -7,11 +7,12 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Login';
+$this->title = Yii::t('app', 'NAV_LOGIN');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
+    <hr class = "my-4">
 
     <p>Please fill out the following fields to login:</p>
 

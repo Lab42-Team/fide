@@ -45,14 +45,14 @@ AppAsset::register($this);
             'items' => [
                 ['label' => Yii::t('app', 'NAV_HOME'), 'url' => ['/site/index']],
                 ['label' => Yii::t('app', 'NAV_ABOUT'), 'url' => ['/site/about']],
-                ['label' => Yii::t('app', 'NAV_CONTACTS'), 'url' => ['/site/contact']],
+                ['label' => Yii::t('app', 'NAV_HELP'), 'url' => ['/site/help']],
+                ['label' => Yii::t('app', 'NAV_DOC'), 'url' => ['/site/documentation']],
                 Yii::$app->user->isGuest ? (
                     ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/site/login']]
                 ) : (
                     '<li>'
                     . Html::beginForm(['/site/logout'], 'post')
-                    . Html::submitButton(
-                        'Logout (' . Yii::$app->user->identity->username . ')',
+                    . Html::submitButton(Yii::t('app', 'NAV_LOGOUT'),
                         ['class' => 'btn btn-link logout']
                     )
                     . Html::endForm()

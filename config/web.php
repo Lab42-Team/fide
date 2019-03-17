@@ -29,8 +29,10 @@ $config = [
             'rules'=>[
                 'index' => 'site/index',
                 'about' => 'site/about',
-                'contact' => 'site/contact',
                 'login' => 'site/login',
+                'help' => 'site/help',
+                'documentation' => 'site/documentation',
+
             ]
         ],
         'cache' => [

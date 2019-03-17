@@ -6,6 +6,9 @@ return [
     'NAV_ABOUT' => 'О сайте',
     'NAV_CONTACTS' => 'Контакты',
     'NAV_LOGIN' => 'Вход',
+    'NAV_HELP' => 'Помощь',
+    'NAV_DOC' => 'Документация',
+    'NAV_LOGOUT' => 'Выход',
 
     /* Нижний колонтитул (подвал) */
     'FOOTER_COPYRIGHT'=>'Все права защищены',
