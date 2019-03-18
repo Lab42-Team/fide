@@ -74,8 +74,10 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
+            <p class="pull-left"><?= Yii::t('app', 'FOOTER_COPYRIGHT') . ' &copy; ' . date('Y') . ' ' .
+                Yii::t('app', 'FOOTER_INSTITUTE') ?></p>
+            <p class="pull-right"><?= Yii::t('app', 'FOOTER_POWERED_BY') . ' <a href="mailto:' .
+                Yii::$app->params['adminEmail'] . '">' . Yii::$app->params['adminEmail'] . '</a>' ?></p>
         </div>
     </footer>
 

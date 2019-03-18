@@ -12,6 +12,7 @@ return [
 
     /* Нижний колонтитул (подвал) */
     'FOOTER_COPYRIGHT'=>'Copyright',
+    'FOOTER_INSTITUTE'=>'ISDCT SB RAS',
     'FOOTER_POWERED_BY' => 'Powered by',
 
     /* Общие кнопки */
