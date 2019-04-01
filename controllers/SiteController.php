@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\FishboneDiagram;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -9,6 +10,9 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+
+
+
 
 class SiteController extends Controller
 {
@@ -55,6 +59,17 @@ class SiteController extends Controller
     }
 
     /**
+     * Displays diagram page.
+     *
+     * @return string
+     */
+    public function actionDiagrams()
+    {
+        $query = FishboneDiagram::getDiagram();
+        return $this->render('diagrams', ['models' => $query,]);
+    }
+
+    /*
      * Displays homepage.
      *
      * @return string
@@ -99,32 +114,18 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    /**public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('help', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Displays about page.
-     *
+     * Displays about page
      * @return string
      */
     public function actionAbout()
     {
         return $this->render('about');
     }
+
+    /*
+     * Displays help page.
+     * @return string
+     */
 
     public function actionHelp()
     {
@@ -139,8 +140,15 @@ class SiteController extends Controller
         ]);
     }
 
+    /**
+     * Displays documentation page.
+     * @return string
+     */
+
     public function actionDocumentation()
     {
         return $this->render('documentation');
     }
+
+
 }

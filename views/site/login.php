@@ -9,19 +9,20 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = Yii::t('app', 'NAV_LOGIN');
 $this->params['breadcrumbs'][] = $this->title;
+$login_message = Yii::t('app', 'LOGIN_MESSAGE');
 ?>
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
     <hr class = "my-4">
 
-    <p>Please fill out the following fields to login:</p>
+    <p><?= Html::encode($login_message) ?></p>
 
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'layout' => 'horizontal',
         'fieldConfig' => [
-            'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
-            'labelOptions' => ['class' => 'col-lg-1 control-label'],
+            'template' => "{label}\n<div class=\"col-lg-4 control-label\">{input}</div>\n<div class=\"col-lg-offset-5\">{error}</div>",
+            'labelOptions' => ['class' => 'col-lg-1'],
         ],
     ]); ?>
 
@@ -35,14 +36,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="form-group">
             <div class="col-lg-offset-1 col-lg-11">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                <?= Html::submitButton(Yii::t('app', 'BUTTON_LOGIN'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
             </div>
         </div>
 
     <?php ActiveForm::end(); ?>
 
-    <div class="col-lg-offset-1" style="color:#999;">
-        You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
-        To modify the username/password, please check out the code <code>app\models\User::$users</code>.
-    </div>
 </div>

@@ -9,6 +9,7 @@ return [
     'NAV_HELP' => 'Help',
     'NAV_DOC' => 'Documentation',
     'NAV_LOGOUT' => 'Logout',
+    'NAV_DIAGRAMS' => 'Diagrams',
 
     /* Нижний колонтитул (подвал) */
     'FOOTER_COPYRIGHT'=>'Copyright',
@@ -24,11 +25,23 @@ return [
     'BUTTON_UPDATE' => 'Update',
     'BUTTON_DELETE' => 'Delete',
     'BUTTON_CANCEL' => 'Cancel',
+    'BUTTON_SUBMIT' => 'Submit',
+    'BUTTON_LOGIN' => 'Login',
+
+    /*Сообщения формы обратной связи*/
+    'SUBMITTED_MESSAGE' => 'Thank you for contacting us. We will respond to you as soon as possible.',
+    'INFO_MESSAGE' => 'If you have questions, please fill out the following form to contact us. Thank you.',
+
+    /*Сообщение для LoginForm*/
+    'LOGIN_MESSAGE' => 'Please fill out the following fields to login:',
+
+
 
     /* Общие заголовки сообщений */
     'WARNING' => 'Warning!',
     'NOTICE_TITLE' => 'Pay attention to',
     'NOTICE_TEXT' => 'this important information.',
+    'GREETING_TEXT' => 'Welcome to FIDE',
 
     /* Общие сообщения об ошибках */
     'ERROR_MESSAGE_PAGE_NOT_FOUND' => 'Page not found.',
@@ -69,4 +82,14 @@ return [
     'LANG_MODEL_LOCAL' => 'Local',
     'LANG_MODEL_NAME' => 'Name',
     'LANG_MODEL_DEFAULT' => 'Default language',
+
+    /* Модели */
+    /* FishboneDiagram */
+    'FISHBONE_DIAGRAM_MODEL_ID' => 'ID',
+    'FISHBONE_DIAGRAM_MODEL_NAME' => 'Name',
+    'FISHBONE_DIAGRAM_MODEL_DESCRIPTION' => 'Description',
+    'FISHBONE_DIAGRAM_MODEL_CREATED_AT' => 'Created at',
+    'FISHBONE_DIAGRAM_MODEL_UPDATED_AT' => 'Updated at',
+
+
 ];

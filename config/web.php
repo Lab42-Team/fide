@@ -32,7 +32,7 @@ $config = [
                 'login' => 'site/login',
                 'help' => 'site/help',
                 'documentation' => 'site/documentation',
-
+                'diagrams' => 'site/diagrams',
             ]
         ],
         'cache' => [

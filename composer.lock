@@ -4,8 +4,106 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b6d10f63fd0a86ff0be5f72c5114faa",
+    "content-hash": "701509e662d2afe0d16aa65a337e3be1",
     "packages": [
+        {
+            "name": "alhimik1986/yii2_crud_module",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alhimik1986/yii2_crud_module.git",
+                "reference": "fc520b9d97e5d05b59e35503adc135fa54e717d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alhimik1986/yii2_crud_module/zipball/fc520b9d97e5d05b59e35503adc135fa54e717d2",
+                "reference": "fc520b9d97e5d05b59e35503adc135fa54e717d2",
+                "shasum": ""
+            },
+            "require": {
+                "alhimik1986/yii2_js_view_module": "^1.0",
+                "php": ">=5.4.0"
+            },
+            "type": "module",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "alhimik1986\\yii2_crud_module\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolay Sidorovich",
+                    "email": "sidorovich21101986@mail.ru",
+                    "homepage": "https://github.com/alhimik1986/"
+                }
+            ],
+            "description": "Excellent yii2 gii code generator for creating ajax applications.",
+            "homepage": "https://github.com/alhimik1986/",
+            "keywords": [
+                "crud",
+                "gii",
+                "module",
+                "yii2"
+            ],
+            "time": "2018-08-11T19:50:26+00:00"
+        },
+        {
+            "name": "alhimik1986/yii2_js_view_module",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alhimik1986/yii2_js_view_module.git",
+                "reference": "af6b740e7eb08bfedbbbe3fc6df8d1e579ea5d50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alhimik1986/yii2_js_view_module/zipball/af6b740e7eb08bfedbbbe3fc6df8d1e579ea5d50",
+                "reference": "af6b740e7eb08bfedbbbe3fc6df8d1e579ea5d50",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "module",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "alhimik1986\\yii2_js_view_module\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolay Sidorovich",
+                    "email": "sidorovich21101986@mail.ru",
+                    "homepage": "https://github.com/alhimik1986/"
+                }
+            ],
+            "description": "The module allows you insert to your page most used javascript-codes with specified presets.",
+            "homepage": "https://github.com/alhimik1986/",
+            "keywords": [
+                "js_view",
+                "module",
+                "yii2"
+            ],
+            "time": "2018-08-11T20:30:53+00:00"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.4.1",

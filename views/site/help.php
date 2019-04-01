@@ -9,6 +9,8 @@ use yii\captcha\Captcha;
 
 $this->title = Yii::t('app', 'NAV_HELP');
 $this->params['breadcrumbs'][] = $this->title;
+$submitted_message = Yii::t('app', 'SUBMITTED_MESSAGE');
+$info_message = Yii::t('app', 'INFO_MESSAGE');
 ?>
 <div class="site-help">
 
@@ -19,19 +21,13 @@ $this->params['breadcrumbs'][] = $this->title;
         <p class = "lead">В данном разделе будет представлена информация о том, как работает редактор</p>
     </div>
 
-
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
-        <div class="alert alert-success">
-            Thank you for contacting us. We will respond to you as soon as possible.
-        </div>
+        <div class="alert alert-success"><?= Html::encode($submitted_message) ?></div>
 
     <?php else: ?>
 
-        <p>
-            If you have questions, please fill out the following form to contact us.
-            Thank you.
-        </p>
+        <p><?= Html::encode($info_message) ?></p>
 
         <div class="row">
             <div class="col-lg-5">
@@ -51,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]) ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                    <?= Html::submitButton(Yii::t('app', 'BUTTON_SUBMIT'), ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>
@@ -61,6 +57,4 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php endif; ?>
 </div>
-
-
 
