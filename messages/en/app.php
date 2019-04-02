@@ -36,12 +36,14 @@ return [
     'LOGIN_MESSAGE' => 'Please fill out the following fields to login:',
 
 
-
-    /* Общие заголовки сообщений */
+    /*Общие заголовки*/
+    'HEADER_UPDATE' => 'Update Fishbone Diagram:',
+    'HEADER_CREATE' => 'Create Fishbone Diagram',
     'WARNING' => 'Warning!',
     'NOTICE_TITLE' => 'Pay attention to',
     'NOTICE_TEXT' => 'this important information.',
     'GREETING_TEXT' => 'Welcome to FIDE',
+    'CONFIRM_TEXT' => 'Are you sure you want to delete this item?',
 
     /* Общие сообщения об ошибках */
     'ERROR_MESSAGE_PAGE_NOT_FOUND' => 'Page not found.',

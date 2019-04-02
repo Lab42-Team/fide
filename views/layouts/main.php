@@ -49,6 +49,7 @@ AppAsset::register($this);
                 ['label' => Yii::t('app', 'NAV_ABOUT'), 'url' => ['/site/about']],
                 ['label' => Yii::t('app', 'NAV_HELP'), 'url' => ['/site/help']],
                 ['label' => Yii::t('app', 'NAV_DOC'), 'url' => ['/site/documentation']],
+
                 Yii::$app->user->isGuest ? (
                     ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/site/login']]
                 ) : (
