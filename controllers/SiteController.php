@@ -5,9 +5,6 @@ namespace app\controllers;
 use app\models\FishboneDiagram;
 use app\models\FishboneDiagramSearch;
 use Yii;
-//use yii\behaviors\TimestampBehavior;
-use yii\db\ActiveRecord;
-use yii\db\Expression;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -27,18 +24,6 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            [
-            'class' => 'yii\behaviors\TimestampBehavior',
-            'attributes' => [
-                ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
-                ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
-                ],
-                'value' => function(){
-                    $date = new Expression('NOW()');
-                    return $date;
-                }
-            ],
-
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout'],
@@ -77,7 +62,6 @@ class SiteController extends Controller
 
     /**
      * Displays diagram page.
-     *
      * @return string
      */
     public function actionDiagrams()
@@ -90,6 +74,10 @@ class SiteController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+
+    /*
+     * View a selected diagram.
+     */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -99,16 +87,10 @@ class SiteController extends Controller
 
     /**
      * Creates a new FishboneDiagram model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
      */
     public function actionCreate()
     {
         $model = new FishboneDiagram();
-        //$date = new \DateTime();
-        //$model->created_at = Yii::$app->formatter->asDatetime($date, 'Y.m.d H:i:s');
-        //$model->updated_at = Yii::$app->formatter->asDatetime($date, 'Y.m.d H:i:s');
-        $model->created_at = date('Y-m-d H:i');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -121,10 +103,6 @@ class SiteController extends Controller
 
     /**
      * Updates an existing FishboneDiagram model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
     {
@@ -133,7 +111,6 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-        $model->refresh();
 
         return $this->render('update', [
             'model' => $model,
@@ -142,10 +119,6 @@ class SiteController extends Controller
 
     /**
      * Deletes an existing FishboneDiagram model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
     {
@@ -156,10 +129,6 @@ class SiteController extends Controller
 
     /**
      * Finds the FishboneDiagram model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return FishboneDiagram the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {

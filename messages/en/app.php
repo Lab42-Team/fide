@@ -27,6 +27,9 @@ return [
     'BUTTON_CANCEL' => 'Cancel',
     'BUTTON_SUBMIT' => 'Submit',
     'BUTTON_LOGIN' => 'Login',
+    'BUTTON_SEARCH' => 'Search',
+    'BUTTON_RESET' => 'Reset',
+
 
     /*Сообщения формы обратной связи*/
     'SUBMITTED_MESSAGE' => 'Thank you for contacting us. We will respond to you as soon as possible.',
@@ -92,6 +95,43 @@ return [
     'FISHBONE_DIAGRAM_MODEL_DESCRIPTION' => 'Description',
     'FISHBONE_DIAGRAM_MODEL_CREATED_AT' => 'Created at',
     'FISHBONE_DIAGRAM_MODEL_UPDATED_AT' => 'Updated at',
+
+    /*
+     * Модели
+     * AggravatingFactor
+     */
+    'AGGRAVATING_FACTOR_ID' => 'ID',
+    'AGGRAVATING_FACTOR_NAME' => 'Name',
+    'AGGRAVATING_FACTOR_DESCRIPTION' => 'Description',
+    'AGGRAVATING_FACTOR_VALUE' => 'Value',
+    'AGGRAVATING_FACTOR_CREATED_AT' => 'Created at',
+    'AGGRAVATING_ACTOR_UPDATED_AT' => 'Updated at',
+    'AGGRAVATING_FACTOR_CLEAR_CAUSE_ID' => 'Clear Cause ID',
+
+    /*
+     * Модели
+     * AnalyticalMembershipFactor*/
+    'ANALYTICAL_MEMBERSHIP_FACTOR_ID' => 'ID',
+    'ANALYTICAL_MEMBERSHIP_FACTOR_TYPE' => 'Type',
+    'ANALYTICAL_MEMBERSHIP_FACTOR_VALUE' => 'Value',
+    'ANALYTICAL_MEMBERSHIP_FACTOR_CREATED_AT' => 'Created at',
+    'ANALYTICAL_MEMBERSHIP_FACTOR_UPDATED_AT' => 'Updated at',
+    'ANALYTICAL_MEMBERSHIP_FACTOR_FUZZY_CAUSE_ID' => 'Fuzzy Cause ID',
+
+    /*
+    * Модели
+    * BaseScale*/
+    'BASE_SCALE_ID' => 'ID',
+    'BASE_SCALE_NAME' => 'Name',
+    'BASE_SCALE_RANGE' => 'Range',
+    'BASE_SCALE_UNIT' => 'Unit',
+    'BASE_SCALE_VALUE' => 'Value',
+    'BASE_SCALE_CREATED_AT' => 'Created at',
+    'BASE_SCALE_UPDATED_AT' => 'Updated at',
+    'BASE_SCALE_FUZZY_CAUSE_ID' => 'Fuzzy Cause ID',
+
+
+
 
 
 ];
