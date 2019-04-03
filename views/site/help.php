@@ -6,55 +6,47 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-
-$this->title = Yii::t('app', 'NAV_HELP');
+$this->title = Yii::t('app', 'HELP_PAGE_TITLE');
 $this->params['breadcrumbs'][] = $this->title;
-$submitted_message = Yii::t('app', 'SUBMITTED_MESSAGE');
-$info_message = Yii::t('app', 'INFO_MESSAGE');
 ?>
+
 <div class="site-help">
 
-
     <h1><?= Html::encode($this->title) ?></h1>
+
     <hr class = "my-4">
     <div class="body-content">
-        <p class = "lead">В данном разделе будет представлена информация о том, как работает редактор</p>
-    </div>
+        <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
+            <div class="alert alert-success"><?= Yii::t('app', 'HELP_PAGE_MESSAGE') ?></div>
+        <?php else: ?>
+            <p><?= Yii::t('app', 'HELP_PAGE_TEXT') ?></p>
+            <div class="row">
+                <div class="col-lg-5">
 
-    <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
+                    <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
-        <div class="alert alert-success"><?= Html::encode($submitted_message) ?></div>
+                    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
-    <?php else: ?>
+                    <?= $form->field($model, 'email') ?>
 
-        <p><?= Html::encode($info_message) ?></p>
+                    <?= $form->field($model, 'subject') ?>
 
-        <div class="row">
-            <div class="col-lg-5">
+                    <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-                <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                        'template' => '<div class="row"><div class="col-lg-3">{image}</div>
+                            <div class="col-lg-6">{input}</div></div>',
+                    ]) ?>
 
-                <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+                    <div class="form-group">
+                        <?= Html::submitButton(Yii::t('app', 'BUTTON_SUBMIT'),
+                            ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                    </div>
 
-                <?= $form->field($model, 'email') ?>
+                    <?php ActiveForm::end(); ?>
 
-                <?= $form->field($model, 'subject') ?>
-
-                <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
-
-                <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                    'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                ]) ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton(Yii::t('app', 'BUTTON_SUBMIT'), ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
                 </div>
-
-                <?php ActiveForm::end(); ?>
-
             </div>
-        </div>
-
-    <?php endif; ?>
-</div>
-
+        <?php endif; ?>
+    </div>
+</div

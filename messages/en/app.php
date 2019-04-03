@@ -28,15 +28,7 @@ return [
     'BUTTON_SUBMIT' => 'Submit',
     'BUTTON_LOGIN' => 'Login',
 
-    /*Сообщения формы обратной связи*/
-    'SUBMITTED_MESSAGE' => 'Thank you for contacting us. We will respond to you as soon as possible.',
-    'INFO_MESSAGE' => 'If you have questions, please fill out the following form to contact us. Thank you.',
-
-    /*Сообщение для LoginForm*/
-    'LOGIN_MESSAGE' => 'Please fill out the following fields to login:',
-
-
-    /*Общие заголовки*/
+    /* Общие заголовки */
     'HEADER_UPDATE' => 'Update Fishbone Diagram:',
     'HEADER_CREATE' => 'Create Fishbone Diagram',
     'WARNING' => 'Warning!',
@@ -57,6 +49,16 @@ return [
     /* Общие уведомления */
     'GENERAL_NOTICE_NO_RESULTS_FOUND' => 'No results found.',
 
+    /* Страницы редактора */
+    /* Страница помощи */
+    'HELP_PAGE_TITLE' => 'Help',
+    'HELP_PAGE_TEXT' => 'If you have questions, please fill out the following form to contact us. Thank you.',
+    'HELP_PAGE_MESSAGE' => 'Thank you for contacting us. We will respond to you as soon as possible.',
+    /* Страница входа */
+    'LOGIN_PAGE_TITLE' => 'Sign in',
+    'LOGIN_PAGE_TEXT' => 'Please fill out the following fields to sign in:',
+    'LOGIN_PAGE_RESET_TEXT' => 'If you forgot your password you can',
+    'LOGIN_PAGE_RESET_LINK' => 'reset it',
     /* Страница ошибки */
     'ERROR_PAGE_TEXT_ONE' => 'The above error occurred while the Web server was processing your request.',
     'ERROR_PAGE_TEXT_TWO' => 'Please contact us if you think this is a server error. Thank you.',
@@ -84,14 +86,10 @@ return [
     'LANG_MODEL_LOCAL' => 'Local',
     'LANG_MODEL_NAME' => 'Name',
     'LANG_MODEL_DEFAULT' => 'Default language',
-
-    /* Модели */
     /* FishboneDiagram */
     'FISHBONE_DIAGRAM_MODEL_ID' => 'ID',
     'FISHBONE_DIAGRAM_MODEL_NAME' => 'Name',
     'FISHBONE_DIAGRAM_MODEL_DESCRIPTION' => 'Description',
     'FISHBONE_DIAGRAM_MODEL_CREATED_AT' => 'Created at',
     'FISHBONE_DIAGRAM_MODEL_UPDATED_AT' => 'Updated at',
-
-
 ];
