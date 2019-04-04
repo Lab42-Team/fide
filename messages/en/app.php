@@ -30,15 +30,6 @@ return [
     'BUTTON_SEARCH' => 'Search',
     'BUTTON_RESET' => 'Reset',
 
-
-    /*Сообщения формы обратной связи*/
-    'SUBMITTED_MESSAGE' => 'Thank you for contacting us. We will respond to you as soon as possible.',
-    'INFO_MESSAGE' => 'If you have questions, please fill out the following form to contact us. Thank you.',
-
-    /*Сообщение для LoginForm*/
-    'LOGIN_MESSAGE' => 'Please fill out the following fields to login:',
-
-
     /*Общие заголовки*/
     'HEADER_UPDATE' => 'Update Fishbone Diagram:',
     'HEADER_CREATE' => 'Create Fishbone Diagram',
@@ -47,6 +38,7 @@ return [
     'NOTICE_TEXT' => 'this important information.',
     'GREETING_TEXT' => 'Welcome to FIDE',
     'CONFIRM_TEXT' => 'Are you sure you want to delete this item?',
+
 
     /* Общие сообщения об ошибках */
     'ERROR_MESSAGE_PAGE_NOT_FOUND' => 'Page not found.',
@@ -59,6 +51,15 @@ return [
 
     /* Общие уведомления */
     'GENERAL_NOTICE_NO_RESULTS_FOUND' => 'No results found.',
+
+    /* Страницы редактора */
+    /*Страница помощи*/
+    'HELP_PAGE_TEXT' => 'Если у Вас возникли вопросы по поводу работы нашего редактора, то пожалуйста, заполните форму и мы свяжемся с Вами в ближайщее время. Спасибо.',
+    'HELP_PAGE_MESSAGE' => 'Спасибо, что связались с нами. Мы ответим Вам в ближайщее время.',
+    /* Страница входа */
+    'LOGIN_PAGE_TEXT' => 'Пожалуйста, заполните следующие поля для входа:',
+    'LOGIN_PAGE_RESET_TEXT' => 'Если Вы забыли свой пароль, то Вы можете',
+    'LOGIN_PAGE_RESET_LINK' => 'сбросить его',
 
     /* Страница ошибки */
     'ERROR_PAGE_TEXT_ONE' => 'The above error occurred while the Web server was processing your request.',
