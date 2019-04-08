@@ -34,10 +34,11 @@ class MainCategory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'description', 'created_at', 'updated_at', 'fishbone_diagram_id'], 'required'],
-            [['created_at', 'updated_at', 'fishbone_diagram_id'], 'default', 'value' => null],
-            [['created_at', 'updated_at', 'fishbone_diagram_id'], 'integer'],
-            [['name', 'description'], 'string', 'max' => 255],
+            [['name', 'fishbone_diagram_id'], 'required'],
+            [['fishbone_diagram_id'], 'default', 'value' => null],
+            [['fishbone_diagram_id'], 'integer'],
+            [['name'], 'string', 'max' => 255],
+            [['description'], 'string', 'max' => 500],
             [['fishbone_diagram_id'], 'exist', 'skipOnError' => true, 'targetClass' => FishboneDiagram::className(), 'targetAttribute' => ['fishbone_diagram_id' => 'id']],
         ];
     }
@@ -48,12 +49,12 @@ class MainCategory extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'fishbone_diagram_id' => 'Fishbone Diagram ID',
+            'id' => Yii::t('app', 'MAIN_CATEGORY_ID'),
+            'name' => Yii::t('app', 'MAIN_CATEGORY_NAME'),
+            'description' => Yii::t('app', 'MAIN_CATEGORY_DESCRIPTION'),
+            'created_at' =>  Yii::t('app', 'MAIN_CATEGORY_CREATED_AT'),
+            'updated_at' => Yii::t('app', 'MAIN_CATEGORY_UPDATED_AT'),
+            'fishbone_diagram_id' => Yii::t('app', 'MAIN_CATEGORY_FISHBONE_DIAGRAM_ID'),
         ];
     }
 

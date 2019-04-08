@@ -37,9 +37,9 @@ class FuzzyCause extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'name_expert', 'type_of_membership_factor', 'value', 'created_at', 'updated_at', 'main_category_id'], 'required'],
-            [['created_at', 'updated_at', 'main_category_id'], 'default', 'value' => null],
-            [['created_at', 'updated_at', 'main_category_id'], 'integer'],
+            [['name', 'name_expert', 'type_of_membership_factor', 'value','main_category_id'], 'required'],
+            [['main_category_id'], 'default', 'value' => null],
+            [['main_category_id'], 'integer'],
             [['name', 'name_expert', 'type_of_membership_factor', 'value'], 'string', 'max' => 255],
             [['main_category_id'], 'exist', 'skipOnError' => true, 'targetClass' => MainCategory::className(), 'targetAttribute' => ['main_category_id' => 'id']],
         ];
@@ -51,14 +51,14 @@ class FuzzyCause extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'name_expert' => 'Name Expert',
-            'type_of_membership_factor' => 'Type Of Membership Factor',
-            'value' => 'Value',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'main_category_id' => 'Main Category ID',
+            'id' => Yii::t('app', 'FUZZY_CAUSE_ID'),
+            'name' => Yii::t('app', 'FUZZY_CAUSE_NAME'),
+            'name_expert' => Yii::t('app', 'FUZZY_CAUSE_NAME_EXPERT'),
+            'type_of_membership_factor' => Yii::t('app', 'FUZZY_CAUSE_TYPE_OF_MEMBERSHIP_FACTOR'),
+            'value' => Yii::t('app', 'FUZZY_CAUSE_VALUE'),
+            'created_at' => Yii::t('app', 'FUZZY_CAUSE_CREATED_AT'),
+            'updated_at' => Yii::t('app', 'FUZZY_CAUSE_UPDATED_AT'),
+            'main_category_id' => Yii::t('app', 'FUZZY_CAUSE_MAIN_CATEGORY_ID'),
         ];
     }
 

@@ -60,122 +60,29 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays diagram page.
-     * @return string
-     */
-    public function actionDiagrams()
-    {
-        $searchModel = new FishboneDiagramSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('diagrams', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /*
-     * View a selected diagram.
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
-     * Creates a new FishboneDiagram model.
-     */
-    public function actionCreate()
-    {
-        $model = new FishboneDiagram();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing FishboneDiagram model.
-     */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing FishboneDiagram model.
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['diagrams']);
-    }
-
-    /**
-     * Finds the FishboneDiagram model based on its primary key value.
-     */
-    protected function findModel($id)
-    {
-        if (($model = FishboneDiagram::findOne($id)) !== null) {
-            return $model;
-        }
-
-        throw new NotFoundHttpException('The requested page does not exist.');
-    }
-
-    /*
-     * Displays homepage.
-     *
-     * @return string
-     */
+    /*Displays homepage.*/
     public function actionIndex()
     {
         return $this->render('index');
     }
 
-    /**
-     * Login action.
-     *
-     * @return Response|string
-     */
+    /*Login action.*/
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
-
         $model->password = '';
         return $this->render('login', [
             'model' => $model,
         ]);
     }
 
-    /**
-     * Logout action.
-     *
-     * @return Response
-     */
+    /*Logout action.*/
     public function actionLogout()
     {
         Yii::$app->user->logout();
@@ -183,19 +90,13 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    /**
-     * Displays about page
-     * @return string
-     */
+    /*Displays about page.*/
     public function actionAbout()
     {
         return $this->render('about');
     }
 
-    /*
-     * Displays help page.
-     * @return string
-     */
+    /*Displays help page.*/
 
     public function actionHelp()
     {
@@ -210,15 +111,75 @@ class SiteController extends Controller
         ]);
     }
 
-    /**
-     * Displays documentation page.
-     * @return string
-     */
+    /*Displays documentation page.*/
 
     public function actionDocumentation()
     {
         return $this->render('documentation');
     }
 
+    /*FishboneDiagram models*/
+    /*Displays diagram page.*/
+    public function actionDiagrams()
+    {
+        $searchModel = new FishboneDiagramSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        return $this->render('diagrams', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /*View a selected diagram.*/
+    public function actionView($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    /*Creates a new FishboneDiagram model.*/
+    public function actionCreate()
+    {
+        $model = new FishboneDiagram();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+        return $this->render('create', [
+            'model' => $model,
+            ]);
+    }
+
+    /*Updates an existing FishboneDiagram model.*/
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
+
+    /*Deletes an existing FishboneDiagram model.*/
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['diagrams']);
+    }
+
+    /*Finds the FishboneDiagram model based on its primary key value.*/
+    protected function findModel($id)
+    {
+        if (($model = FishboneDiagram::findOne($id)) !== null) {
+            return $model;
+        }
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
 }

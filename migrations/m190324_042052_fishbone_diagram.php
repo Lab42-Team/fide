@@ -15,10 +15,10 @@ class m190324_042052_fishbone_diagram extends Migration
 
         $this->createTable('{{%fishbone_diagram}}', [
             'id' => $this->primaryKey(),
-            'name' => $this->string()->notNull(),
+            'name' => $this->string(),
             'description' => $this->string()->notNull(),
-            'created_at' => $this->date()->notNull(),
-            'updated_at' => $this->date()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
 
         $this->createIndex('idx_fishbone_diagram_name', '{{%fishbone_diagram}}', 'name');

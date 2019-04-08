@@ -17,8 +17,8 @@ class m190325_041904_table_membership_factor extends Migration
             'id' => $this->primaryKey(),
             'value' => $this->string()->notNull(),
             'coefficient' => $this->float()->notNull(),
-            'created_at' => $this->date()->notNull(),
-            'updated_at' => $this->date()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'fuzzy_cause_id' => $this->integer()->notNull(),
         ], $tableOptions);
 

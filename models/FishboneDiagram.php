@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
 /**
@@ -33,10 +34,9 @@ class FishboneDiagram extends ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'description', 'created_at', 'updated_at'], 'required'],
-            [['created_at', 'updated_at'], 'default', 'value' => null],
-            [['created_at', 'updated_at'], 'integer'],
-            [['name', 'description'], 'string', 'max' => 255],
+            [['name'], 'required'],
+            [['name'], 'string', 'max' => 255],
+            [['description'], 'string', 'max' => 500],
         ];
     }
 
@@ -54,6 +54,12 @@ class FishboneDiagram extends ActiveRecord
         ];
     }
 
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
 
     /**
      * @return \yii\db\ActiveQuery

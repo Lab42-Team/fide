@@ -19,8 +19,8 @@ class m190324_132824_base_scale extends Migration
             'range' => $this->string()->notNull(),
             'unit' => $this->string()->notNull(),
             'value' => $this->float()->notNull(),
-            'created_at' => $this->date()->notNull(),
-            'updated_at' => $this->date()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'fuzzy_cause_id' => $this->integer()->notNull(),
         ], $tableOptions);
 

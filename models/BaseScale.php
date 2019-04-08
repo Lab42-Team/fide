@@ -34,10 +34,10 @@ class BaseScale extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'range', 'unit', 'value', 'created_at', 'updated_at', 'fuzzy_cause_id'], 'required'],
+            [['name', 'range', 'unit', 'value', 'fuzzy_cause_id'], 'required'],
             [['value'], 'number'],
-            [['created_at', 'updated_at', 'fuzzy_cause_id'], 'default', 'value' => null],
-            [['created_at', 'updated_at', 'fuzzy_cause_id'], 'integer'],
+            [['fuzzy_cause_id'], 'default', 'value' => null],
+            [['fuzzy_cause_id'], 'integer'],
             [['name', 'range', 'unit'], 'string', 'max' => 255],
             [['fuzzy_cause_id'], 'exist', 'skipOnError' => true, 'targetClass' => FuzzyCause::className(), 'targetAttribute' => ['fuzzy_cause_id' => 'id']],
         ];

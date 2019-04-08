@@ -35,11 +35,12 @@ class ClearCause extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'description', 'certainty_factor', 'created_at', 'updated_at', 'main_category_id'], 'required'],
+            [['name', 'certainty_factor', 'main_category_id'], 'required'],
             [['certainty_factor'], 'number'],
-            [['created_at', 'updated_at', 'main_category_id'], 'default', 'value' => null],
-            [['created_at', 'updated_at', 'main_category_id'], 'integer'],
-            [['name', 'description'], 'string', 'max' => 255],
+            [['main_category_id'], 'default', 'value' => null],
+            [['main_category_id'], 'integer'],
+            [['name'], 'string', 'max' => 255],
+            [['description'], 'string', 'max' => 500],
             [['main_category_id'], 'exist', 'skipOnError' => true, 'targetClass' => MainCategory::className(), 'targetAttribute' => ['main_category_id' => 'id']],
         ];
     }
@@ -50,13 +51,13 @@ class ClearCause extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'certainty_factor' => 'Certainty Factor',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'main_category_id' => 'Main Category ID',
+            'id' => Yii::t('app', 'CLEAR_CAUSE_ID'),
+            'name' => Yii::t('app', 'CLEAR_CAUSE_NAME'),
+            'description' => Yii::t('app', 'CLEAR_CAUSE_DESCRIPTION'),
+            'certainty_factor' => Yii::t('app', 'CLEAR_CAUSE_CERTAINTY_FACTOR'),
+            'created_at' => Yii::t('app', 'CLEAR_CAUSE_CREATED_AT'),
+            'updated_at' => Yii::t('app', 'CLEAR_CAUSE_UPDATED_AT'),
+            'main_category_id' => Yii::t('app', 'CLEAR_CAUSE_MAIN_CATEGORY_ID'),
         ];
     }
 

@@ -17,10 +17,10 @@ class m190324_131646_neutralizing_factor extends Migration
         $this->createTable('{{%neutralizing_factor}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
-            'description' => $this->string()->notNull(),
+            'description' => $this->string(),
             'value' => $this->string()->notNull(),
-            'created_at' => $this->date()->notNull(),
-            'updated_at' => $this->date()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'clear_cause_id' => $this->integer()->notNull(),
         ], $tableOptions);
 

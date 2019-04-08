@@ -17,10 +17,10 @@ class m190324_074157_problem extends Migration
         $this->createTable('{{%problem}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
-            'description' => $this->string()->notNull(),
+            'description' => $this->string(),
             'certainty_factor' => $this->float()->notNull(),
-            'created_at' => $this->date()->notNull(),
-            'updated_at' => $this->date()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'fishbone_diagram_id' =>$this->integer()->notNull(),
         ], $tableOptions);
 

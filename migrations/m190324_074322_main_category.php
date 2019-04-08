@@ -17,9 +17,9 @@ class m190324_074322_main_category extends Migration
         $this->createTable('{{%main_category}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
-            'description' => $this->string()->notNull(),
-            'created_at' => $this->date()->notNull(),
-            'updated_at' => $this->date()->notNull(),
+            'description' => $this->string(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'fishbone_diagram_id' =>$this->integer()->notNull(),
         ], $tableOptions);
 

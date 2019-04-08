@@ -33,10 +33,11 @@ class NeutralizingFactor extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'description', 'value', 'created_at', 'updated_at', 'clear_cause_id'], 'required'],
-            [['created_at', 'updated_at', 'clear_cause_id'], 'default', 'value' => null],
-            [['created_at', 'updated_at', 'clear_cause_id'], 'integer'],
-            [['name', 'description', 'value'], 'string', 'max' => 255],
+            [['name', 'value', 'clear_cause_id'], 'required'],
+            [['clear_cause_id'], 'default', 'value' => null],
+            [['clear_cause_id'], 'integer'],
+            [['name', 'value'], 'string', 'max' => 255],
+            [['description'], 'string', 'max' => 500],
             [['clear_cause_id'], 'exist', 'skipOnError' => true, 'targetClass' => ClearCause::className(), 'targetAttribute' => ['clear_cause_id' => 'id']],
         ];
     }
@@ -47,13 +48,13 @@ class NeutralizingFactor extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'value' => 'Value',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'clear_cause_id' => 'Clear Cause ID',
+            'id' => Yii::t('app', 'NEUTRALIZING_FACTOR_ID'),
+            'name' => Yii::t('app', 'NEUTRALIZING_FACTOR_NAME'),
+            'description' => Yii::t('app', 'NEUTRALIZING_DESCRIPTION'),
+            'value' => Yii::t('app', 'NEUTRALIZING_FACTOR_VALUE'),
+            'created_at' => Yii::t('app', 'NEUTRALIZING_FACTOR_CREATED_AT'),
+            'updated_at' => Yii::t('app', 'NEUTRALIZING_FACTOR_UPDATED_AT'),
+            'clear_cause_id' => Yii::t('app', 'NEUTRALIZING_FACTOR_CLEAR_CAUSE_ID'),
         ];
     }
 

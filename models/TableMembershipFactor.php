@@ -32,10 +32,10 @@ class TableMembershipFactor extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['value', 'coefficient', 'created_at', 'updated_at', 'fuzzy_cause_id'], 'required'],
+            [['value', 'coefficient', 'fuzzy_cause_id'], 'required'],
             [['coefficient'], 'number'],
-            [['created_at', 'updated_at', 'fuzzy_cause_id'], 'default', 'value' => null],
-            [['created_at', 'updated_at', 'fuzzy_cause_id'], 'integer'],
+            [['fuzzy_cause_id'], 'default', 'value' => null],
+            [['fuzzy_cause_id'], 'integer'],
             [['value'], 'string', 'max' => 255],
             [['fuzzy_cause_id'], 'exist', 'skipOnError' => true, 'targetClass' => FuzzyCause::className(), 'targetAttribute' => ['fuzzy_cause_id' => 'id']],
         ];
@@ -47,12 +47,12 @@ class TableMembershipFactor extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'value' => 'Value',
-            'coefficient' => 'Coefficient',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'fuzzy_cause_id' => 'Fuzzy Cause ID',
+            'id' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_ID'),
+            'value' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_VALUE'),
+            'coefficient' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_COEFFICIENT'),
+            'created_at' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_CREATED_AT'),
+            'updated_at' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_UPDATED_AT'),
+            'fuzzy_cause_id' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_FUZZY_CAUSE_ID'),
         ];
     }
 
