@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%main_category}}".
@@ -55,6 +56,13 @@ class MainCategory extends \yii\db\ActiveRecord
             'created_at' =>  Yii::t('app', 'MAIN_CATEGORY_CREATED_AT'),
             'updated_at' => Yii::t('app', 'MAIN_CATEGORY_UPDATED_AT'),
             'fishbone_diagram_id' => Yii::t('app', 'MAIN_CATEGORY_FISHBONE_DIAGRAM_ID'),
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
         ];
     }
 

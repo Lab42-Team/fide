@@ -45,7 +45,7 @@ AppAsset::register($this);
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => [
                 ['label' => Yii::t('app', 'NAV_HOME'), 'url' => ['/site/index']],
-                ['label' => Yii::t('app', 'NAV_DIAGRAMS'), 'url' => ['/site/diagrams']],
+                ['label' => Yii::t('app', 'NAV_DIAGRAMS'), 'url' => ['fishbone-diagram/index']],
                 ['label' => Yii::t('app', 'NAV_ABOUT'), 'url' => ['/site/about']],
                 ['label' => Yii::t('app', 'NAV_HELP'), 'url' => ['/site/help']],
                 ['label' => Yii::t('app', 'NAV_DOC'), 'url' => ['/site/documentation']],

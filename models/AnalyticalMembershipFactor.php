@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%analytical_membership_factor}}".
@@ -53,6 +54,13 @@ class AnalyticalMembershipFactor extends \yii\db\ActiveRecord
             'created_at' => Yii::t('app', 'ANALYTICAL_MEMBERSHIP_FACTOR_CREATED_AT'),
             'updated_at' => Yii::t('app', 'ANALYTICAL_MEMBERSHIP_FACTOR_UPDATED_AT'),
             'fuzzy_cause_id' => Yii::t('app', 'ANALYTICAL_MEMBERSHIP_FACTOR_FUZZY_CAUSE_ID'),
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
         ];
     }
 

@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%clear_cause}}".
@@ -58,6 +59,13 @@ class ClearCause extends \yii\db\ActiveRecord
             'created_at' => Yii::t('app', 'CLEAR_CAUSE_CREATED_AT'),
             'updated_at' => Yii::t('app', 'CLEAR_CAUSE_UPDATED_AT'),
             'main_category_id' => Yii::t('app', 'CLEAR_CAUSE_MAIN_CATEGORY_ID'),
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
         ];
     }
 

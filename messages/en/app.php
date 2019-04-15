@@ -10,6 +10,11 @@ return [
     'NAV_DOC' => 'Documentation',
     'NAV_LOGOUT' => 'Logout',
     'NAV_DIAGRAMS' => 'Diagrams',
+    'NAV_BACK' => 'Return to Diagrams',
+    'NAV_ADD' => 'Add',
+    'NAV_ADD_PROBLEM' => 'Add problem',
+    'NAV_ADD_CATEGORY' => 'Add category',
+    'NAV_EXPORT' => 'Export',
 
     /* Нижний колонтитул (подвал) */
     'FOOTER_COPYRIGHT'=>'Copyright',
@@ -141,6 +146,7 @@ return [
     * FuzzyCause*/
     'FUZZY_CAUSE_ID' => 'ID',
     'FUZZY_CAUSE_NAME' => 'Name of fuzzy cause',
+    'FUZZY_CAUSE_DESCRIPTION' => 'Description of fuzzy cause',
     'FUZZY_CAUSE_NAME_EXPERT' => 'Name of expert',
     'FUZZY_CAUSE_TYPE_OF_MEMBERSHIP_FACTOR' => 'Type of membership factor',
     'FUZZY_CAUSE_VALUE' => 'Value',

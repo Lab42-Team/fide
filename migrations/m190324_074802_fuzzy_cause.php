@@ -17,6 +17,7 @@ class m190324_074802_fuzzy_cause extends Migration
         $this->createTable('{{%fuzzy_cause}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
+            'description' => $this->string(),
             'name_expert' => $this->string()->notNull(),
             'type_of_membership_factor' => $this->string()->notNull(),
             'value' => $this->string()->notNull(),

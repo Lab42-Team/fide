@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\FishboneDiagram */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Fishbone Diagrams', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'NAV_DIAGRAMS'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a(Yii::t('app', 'BUTTON_UPDATE'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', 'BUTTON_DELETE'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => Yii::t('app', 'CONFIRM_TEXT'),
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'id',
             'name',
             'description',
-            'created_at',
-            'updated_at',
+            'created_at:dateTime',
+            'updated_at:dateTime',
         ],
     ]) ?>
 

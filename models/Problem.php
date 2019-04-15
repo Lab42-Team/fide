@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%problem}}".
@@ -56,6 +57,13 @@ class Problem extends \yii\db\ActiveRecord
             'created_at' =>  Yii::t('app', 'PROBLEM_CREATED_AT'),
             'updated_at' =>  Yii::t('app', 'PROBLEM_UPDATED_AT'),
             'fishbone_diagram_id' =>  Yii::t('app', 'PROBLEM_FISHBONE_DIAGRAM_ID'),
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
         ];
     }
 

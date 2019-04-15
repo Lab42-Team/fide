@@ -10,6 +10,11 @@ return [
     'NAV_DOC' => 'Документация',
     'NAV_LOGOUT' => 'Выход',
     'NAV_DIAGRAMS' => 'Диаграммы',
+    'NAV_BACK' => 'Вернуться к списку',
+    'NAV_ADD' => 'Добавить',
+    'NAV_ADD_PROBLEM' => 'Добавить проблему',
+    'NAV_ADD_CATEGORY' => 'Добавить категорию',
+    'NAV_EXPORT' => 'Экспортировать',
 
     /* Нижний колонтитул (подвал) */
     'FOOTER_COPYRIGHT'=>'Все права защищены',
@@ -141,6 +146,7 @@ return [
    * FuzzyCause*/
     'FUZZY_CAUSE_ID' => 'ID',
     'FUZZY_CAUSE_NAME' => 'Название нечеткой причины',
+    'FUZZY_CAUSE_DESCRIPTION' => 'Описание нечеткой причины',
     'FUZZY_CAUSE_NAME_EXPERT' => 'ФИО эксперта',
     'FUZZY_CAUSE_TYPE_OF_MEMBERSHIP_FACTOR' => 'Вид функции принадлежности',
     'FUZZY_CAUSE_VALUE' => 'Значение',

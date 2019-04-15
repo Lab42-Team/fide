@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%fuzzy_cause}}".
@@ -41,6 +42,7 @@ class FuzzyCause extends \yii\db\ActiveRecord
             [['main_category_id'], 'default', 'value' => null],
             [['main_category_id'], 'integer'],
             [['name', 'name_expert', 'type_of_membership_factor', 'value'], 'string', 'max' => 255],
+            [['description'], 'string', 'max' => 500],
             [['main_category_id'], 'exist', 'skipOnError' => true, 'targetClass' => MainCategory::className(), 'targetAttribute' => ['main_category_id' => 'id']],
         ];
     }
@@ -53,12 +55,20 @@ class FuzzyCause extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'FUZZY_CAUSE_ID'),
             'name' => Yii::t('app', 'FUZZY_CAUSE_NAME'),
+            'description' => Yii::t('app', 'FUZZY_CAUSE_DESCRIPTION'),
             'name_expert' => Yii::t('app', 'FUZZY_CAUSE_NAME_EXPERT'),
             'type_of_membership_factor' => Yii::t('app', 'FUZZY_CAUSE_TYPE_OF_MEMBERSHIP_FACTOR'),
             'value' => Yii::t('app', 'FUZZY_CAUSE_VALUE'),
             'created_at' => Yii::t('app', 'FUZZY_CAUSE_CREATED_AT'),
             'updated_at' => Yii::t('app', 'FUZZY_CAUSE_UPDATED_AT'),
             'main_category_id' => Yii::t('app', 'FUZZY_CAUSE_MAIN_CATEGORY_ID'),
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
         ];
     }
 

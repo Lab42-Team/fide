@@ -28,9 +28,6 @@ class FishboneDiagram extends ActiveRecord
         return '{{%fishbone_diagram}}';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [

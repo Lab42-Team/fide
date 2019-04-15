@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%neutralizing_factor}}".
@@ -39,6 +40,13 @@ class NeutralizingFactor extends \yii\db\ActiveRecord
             [['name', 'value'], 'string', 'max' => 255],
             [['description'], 'string', 'max' => 500],
             [['clear_cause_id'], 'exist', 'skipOnError' => true, 'targetClass' => ClearCause::className(), 'targetAttribute' => ['clear_cause_id' => 'id']],
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
         ];
     }
 

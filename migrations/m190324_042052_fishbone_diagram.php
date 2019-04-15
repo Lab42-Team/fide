@@ -16,7 +16,7 @@ class m190324_042052_fishbone_diagram extends Migration
         $this->createTable('{{%fishbone_diagram}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
-            'description' => $this->string()->notNull(),
+            'description' => $this->string(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
