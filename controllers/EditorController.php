@@ -3,8 +3,6 @@
 
 namespace app\controllers;
 
-
-use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use app\models\FishboneDiagram;
