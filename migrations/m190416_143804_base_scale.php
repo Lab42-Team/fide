@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m190324_132824_base_scale
+ * Class m190416_143804_base_scale
  */
-class m190324_132824_base_scale extends Migration
+class m190416_143804_base_scale extends Migration
 {
     public function up()
     {

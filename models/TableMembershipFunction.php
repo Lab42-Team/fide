@@ -3,10 +3,9 @@
 namespace app\models;
 
 use Yii;
-use yii\behaviors\TimestampBehavior;
 
 /**
- * This is the model class for table "{{%table_membership_factor}}".
+ * This is the model class for table "{{%table_membership_function}}".
  *
  * @property int $id
  * @property string $value
@@ -17,14 +16,14 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property FuzzyCause $fuzzyCause
  */
-class TableMembershipFactor extends \yii\db\ActiveRecord
+class TableMembershipFunction extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return '{{%table_membership_factor}}';
+        return '{{%table_membership_function}}';
     }
 
     /**
@@ -38,9 +37,11 @@ class TableMembershipFactor extends \yii\db\ActiveRecord
             [['fuzzy_cause_id'], 'default', 'value' => null],
             [['fuzzy_cause_id'], 'integer'],
             [['value'], 'string', 'max' => 255],
-            [['fuzzy_cause_id'], 'exist', 'skipOnError' => true, 'targetClass' => FuzzyCause::className(), 'targetAttribute' => ['fuzzy_cause_id' => 'id']],
+            [['fuzzy_cause_id'], 'exist', 'skipOnError' => true, 'targetClass' => FuzzyCause::className(),
+                'targetAttribute' => ['fuzzy_cause_id' => 'id']],
         ];
     }
+
 
     /**
      * {@inheritdoc}
@@ -48,19 +49,12 @@ class TableMembershipFactor extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_ID'),
-            'value' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_VALUE'),
-            'coefficient' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_COEFFICIENT'),
-            'created_at' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_CREATED_AT'),
-            'updated_at' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_UPDATED_AT'),
-            'fuzzy_cause_id' => Yii::t('app', 'TABLE_MEMBERSHIP_FACTOR_FUZZY_CAUSE_ID'),
-        ];
-    }
-
-    public function behaviors()
-    {
-        return [
-            TimestampBehavior::className(),
+            'id' => Yii::t('app', 'TABLE_MEMBERSHIP_FUNCTION_ID'),
+            'value' => Yii::t('app', 'TABLE_MEMBERSHIP_FUNCTION_VALUE'),
+            'coefficient' => Yii::t('app', 'TABLE_MEMBERSHIP_FUNCTION_COEFFICIENT'),
+            'created_at' => Yii::t('app', 'TABLE_MEMBERSHIP_FUNCTION_CREATED_AT'),
+            'updated_at' => Yii::t('app', 'TABLE_MEMBERSHIP_FUNCTION_UPDATED_AT'),
+            'fuzzy_cause_id' => Yii::t('app', 'TABLE_MEMBERSHIP_FUNCTION_FUZZY_CAUSE_ID'),
         ];
     }
 

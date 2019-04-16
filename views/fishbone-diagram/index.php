@@ -1,6 +1,8 @@
 <?php
 
 use app\models\FishboneDiagramSearch;
+
+use yii\helpers\Url;
 use yii\data\ActiveDataProvider;
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -48,7 +50,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ],
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
+            ['class' => 'yii\grid\ActionColumn',
+                'header' => 'Actions',
+                'headerOptions' => ['style' => 'color:#337ab7'],
+                'template' => '{view} {update} {delete}',
+                'buttons' =>
+                    ['update' => function($url, $model){
+                        return Html::a('<span class="glyphicon glyphicon-pencil"></span>',
+                            Url::to(['/editor/main', 'id' => $model->id],['class'=>'primary']));},]
+            ],
+        ]
     ]); ?>
 </div>

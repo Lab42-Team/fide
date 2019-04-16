@@ -70,8 +70,9 @@ class FishboneDiagramController extends Controller
     {
         $model = new FishboneDiagram();
 
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['/editor/main', 'model' => $model]);
+            return $this->redirect(['/editor/main', 'id' => $model->id]);
         }
 
         return $this->render('create', [
@@ -112,6 +113,12 @@ class FishboneDiagramController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionEdit($id)
+    {
+        $model = $this->findModel($id);
+        return $this->redirect(['/editor/main', 'id' => $model->id]);
     }
 
     /**

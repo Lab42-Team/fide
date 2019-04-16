@@ -34,6 +34,7 @@ return [
     'BUTTON_LOGIN' => 'Login',
     'BUTTON_SEARCH' => 'Search',
     'BUTTON_RESET' => 'Reset',
+    'BUTTON_EDIT' => 'Edit',
 
     /*Общие заголовки*/
     'HEADER_UPDATE' => 'Update Fishbone Diagram:',
@@ -97,16 +98,16 @@ return [
     /* Модели */
     /* FishboneDiagram */
     'FISHBONE_DIAGRAM_MODEL_ID' => 'ID',
-    'FISHBONE_DIAGRAM_MODEL_NAME' => 'Name of diagram',
-    'FISHBONE_DIAGRAM_MODEL_DESCRIPTION' => 'Description of diagram',
+    'FISHBONE_DIAGRAM_MODEL_NAME' => 'Name',
+    'FISHBONE_DIAGRAM_MODEL_DESCRIPTION' => 'Description',
     'FISHBONE_DIAGRAM_MODEL_CREATED_AT' => 'Created at',
     'FISHBONE_DIAGRAM_MODEL_UPDATED_AT' => 'Updated at',
 
     /*Модели
      * AggravatingFactor*/
     'AGGRAVATING_FACTOR_ID' => 'ID',
-    'AGGRAVATING_FACTOR_NAME' => 'Name of aggravating factor',
-    'AGGRAVATING_FACTOR_DESCRIPTION' => 'Description of aggravating factor',
+    'AGGRAVATING_FACTOR_NAME' => 'Name',
+    'AGGRAVATING_FACTOR_DESCRIPTION' => 'Description',
     'AGGRAVATING_FACTOR_VALUE' => 'Value',
     'AGGRAVATING_FACTOR_CREATED_AT' => 'Created at',
     'AGGRAVATING_ACTOR_UPDATED_AT' => 'Updated at',
@@ -114,17 +115,17 @@ return [
 
     /*Модели
      * AnalyticalMembershipFactor*/
-    'ANALYTICAL_MEMBERSHIP_FACTOR_ID' => 'ID',
-    'ANALYTICAL_MEMBERSHIP_FACTOR_TYPE' => 'Type of membership factor (analytical)',
-    'ANALYTICAL_MEMBERSHIP_FACTOR_VALUE' => 'Value',
-    'ANALYTICAL_MEMBERSHIP_FACTOR_CREATED_AT' => 'Created at',
-    'ANALYTICAL_MEMBERSHIP_FACTOR_UPDATED_AT' => 'Updated at',
-    'ANALYTICAL_MEMBERSHIP_FACTOR_FUZZY_CAUSE_ID' => 'Fuzzy Cause ID',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_ID' => 'ID',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_TYPE' => 'Type',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_VALUE' => 'Value',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_CREATED_AT' => 'Created at',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_UPDATED_AT' => 'Updated at',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_FUZZY_CAUSE_ID' => 'Fuzzy Cause ID',
 
     /*Модели
     * BaseScale*/
     'BASE_SCALE_ID' => 'ID',
-    'BASE_SCALE_NAME' => 'Name of base scale',
+    'BASE_SCALE_NAME' => 'Name',
     'BASE_SCALE_RANGE' => 'Range',
     'BASE_SCALE_UNIT' => 'Unit',
     'BASE_SCALE_VALUE' => 'Value',
@@ -145,10 +146,10 @@ return [
     /*Модели
     * FuzzyCause*/
     'FUZZY_CAUSE_ID' => 'ID',
-    'FUZZY_CAUSE_NAME' => 'Name of fuzzy cause',
-    'FUZZY_CAUSE_DESCRIPTION' => 'Description of fuzzy cause',
-    'FUZZY_CAUSE_NAME_EXPERT' => 'Name of expert',
-    'FUZZY_CAUSE_TYPE_OF_MEMBERSHIP_FACTOR' => 'Type of membership factor',
+    'FUZZY_CAUSE_NAME' => 'Name',
+    'FUZZY_CAUSE_DESCRIPTION' => 'Description',
+    'FUZZY_CAUSE_NAME_EXPERT' => 'Expert name',
+    'FUZZY_CAUSE_MEMBERSHIP_FUNCTION_TYPE' => 'Membership factor type',
     'FUZZY_CAUSE_VALUE' => 'Value',
     'FUZZY_CAUSE_CREATED_AT' => 'Created at',
     'FUZZY_CAUSE_UPDATED_AT' => 'Updated at',
@@ -157,8 +158,8 @@ return [
     /*Модели
     * MainCategory*/
     'MAIN_CATEGORY_ID' => 'ID',
-    'MAIN_CATEGORY_NAME' => 'Name of category',
-    'MAIN_CATEGORY_DESCRIPTION' => 'Description of category',
+    'MAIN_CATEGORY_NAME' => 'Name',
+    'MAIN_CATEGORY_DESCRIPTION' => 'Description',
     'MAIN_CATEGORY_CREATED_AT' => 'Created at',
     'MAIN_CATEGORY_UPDATED_AT' => 'Updated at',
     'MAIN_CATEGORY_FISHBONE_DIAGRAM_ID' => 'Fishbone diagram ID',
@@ -166,8 +167,8 @@ return [
     /*Модели
      * NeutralizingFactor*/
     'NEUTRALIZING_FACTOR_ID' => 'ID',
-    'NEUTRALIZING_FACTOR_NAME' => 'Name of neutralizing factor',
-    'NEUTRALIZING_FACTOR_DESCRIPTION' => 'Description of neutralizing factor',
+    'NEUTRALIZING_FACTOR_NAME' => 'Name',
+    'NEUTRALIZING_FACTOR_DESCRIPTION' => 'Description',
     'NEUTRALIZING_FACTOR_VALUE' => 'Value',
     'NEUTRALIZING_FACTOR_CREATED_AT' => 'Created at',
     'NEUTRALIZING_ACTOR_UPDATED_AT' => 'Updated at',
@@ -176,8 +177,8 @@ return [
     /*Модели
     * Problem*/
     'PROBLEM_ID' => 'ID',
-    'PROBLEM_NAME' => 'Name of problem',
-    'PROBLEM_DESCRIPTION' => 'Description of problem',
+    'PROBLEM_NAME' => 'Name',
+    'PROBLEM_DESCRIPTION' => 'Description',
     'PROBLEM_CERTAINTY_FACTOR' => 'Certainty factor',
     'PROBLEM_CREATED_AT' => 'Created at',
     'PROBLEM_UPDATED_AT' => 'Updated at',
@@ -185,12 +186,12 @@ return [
 
     /*Модели
      * TableMembershipFactor*/
-    'TABLE_MEMBERSHIP_FACTOR_ID' => 'ID',
-    'TABLE_MEMBERSHIP_FACTOR_VALUE' => 'Value',
-    'TABLE_MEMBERSHIP_FACTOR_COEFFICIENT' => 'Coefficient',
-    'TABLE_MEMBERSHIP_FACTOR_CREATED_AT' => 'Created at',
-    'TABLE_MEMBERSHIP_FACTOR_UPDATED_AT' => 'Updated at',
-    'TABLE_MEMBERSHIP_FACTOR_FUZZY_CAUSE_ID' => 'Fuzzy Cause ID',
+    'TABLE_MEMBERSHIP_FUNCTION_ID' => 'ID',
+    'TABLE_MEMBERSHIP_FUNCTION_VALUE' => 'Value',
+    'TABLE_MEMBERSHIP_FUNCTION_COEFFICIENT' => 'Coefficient',
+    'TABLE_MEMBERSHIP_FUNCTION_CREATED_AT' => 'Created at',
+    'TABLE_MEMBERSHIP_FUNCTION_UPDATED_AT' => 'Updated at',
+    'TABLE_MEMBERSHIP_FUNCTION_FUZZY_CAUSE_ID' => 'Fuzzy Cause ID',
 
 
 

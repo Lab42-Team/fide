@@ -34,6 +34,7 @@ return [
     'BUTTON_LOGIN' => 'Войти',
     'BUTTON_SEARCH' => 'Найти',
     'BUTTON_RESET' => 'Сбросить',
+    'BUTTON_EDIT' => 'Редактировать',
 
     /* Общие заголовки */
     'HEADER_UPDATE' => 'Обновить диаграмму:',
@@ -114,12 +115,12 @@ return [
 
     /* Модели
      * AnalyticalMembershipFactor*/
-    'ANALYTICAL_MEMBERSHIP_FACTOR_ID' => 'ID',
-    'ANALYTICAL_MEMBERSHIP_FACTOR_TYPE' => 'Тип функции принадлежности ',
-    'ANALYTICAL_MEMBERSHIP_FACTOR_VALUE' => 'Значение',
-    'ANALYTICAL_MEMBERSHIP_FACTOR_CREATED_AT' => 'Создан',
-    'ANALYTICAL_MEMBERSHIP_FACTOR_UPDATED_AT' => 'Обновлен',
-    'ANALYTICAL_MEMBERSHIP_FACTOR_FUZZY_CAUSE_ID' => 'ID Четкой причины',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_ID' => 'ID',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_TYPE' => 'Тип функции принадлежности ',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_VALUE' => 'Значение',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_CREATED_AT' => 'Создан',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_UPDATED_AT' => 'Обновлен',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_FUZZY_CAUSE_ID' => 'ID Четкой причины',
 
     /* Модели
      * BaseScale*/
@@ -148,7 +149,7 @@ return [
     'FUZZY_CAUSE_NAME' => 'Название нечеткой причины',
     'FUZZY_CAUSE_DESCRIPTION' => 'Описание нечеткой причины',
     'FUZZY_CAUSE_NAME_EXPERT' => 'ФИО эксперта',
-    'FUZZY_CAUSE_TYPE_OF_MEMBERSHIP_FACTOR' => 'Вид функции принадлежности',
+    'FUZZY_CAUSE_MEMBERSHIP_FUNCTION_TYPE' => 'Вид функции принадлежности',
     'FUZZY_CAUSE_VALUE' => 'Значение',
     'FUZZY_CAUSE_CREATED_AT' => 'Создан',
     'FUZZY_CAUSE_UPDATED_AT' => 'Обновлен',
@@ -185,12 +186,12 @@ return [
 
     /*Модели
      * TableMembershipFactor*/
-    'TABLE_MEMBERSHIP_FACTOR_ID' => 'ID',
-    'TABLE_MEMBERSHIP_FACTOR_VALUE' => 'Значение',
-    'TABLE_MEMBERSHIP_FACTOR_COEFFICIENT' => 'Коэффициент',
-    'TABLE_MEMBERSHIP_FACTOR_CREATED_AT' => 'Создан',
-    'TABLE_MEMBERSHIP_FACTOR_UPDATED_AT' => 'Обновлен',
-    'TABLE_MEMBERSHIP_FACTOR_FUZZY_CAUSE_ID' => 'ID нечеткой причины',
+    'TABLE_MEMBERSHIP_FUNCTION_ID' => 'ID',
+    'TABLE_MEMBERSHIP_FUNCTION_VALUE' => 'Значение',
+    'TABLE_MEMBERSHIP_FUNCTION_COEFFICIENT' => 'Коэффициент',
+    'TABLE_MEMBERSHIP_FUNCTION_CREATED_AT' => 'Создан',
+    'TABLE_MEMBERSHIP_FUNCTION_UPDATED_AT' => 'Обновлен',
+    'TABLE_MEMBERSHIP_FUNCTION_FUZZY_CAUSE_ID' => 'ID нечеткой причины',
 
 
 ];

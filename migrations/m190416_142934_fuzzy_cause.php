@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m190324_074802_fuzzy_cause
+ * Class m190416_142934_fuzzy_cause
  */
-class m190324_074802_fuzzy_cause extends Migration
+class m190416_142934_fuzzy_cause extends Migration
 {
 
     public function up()
@@ -18,8 +18,8 @@ class m190324_074802_fuzzy_cause extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
             'description' => $this->text(),
-            'name_expert' => $this->string()->notNull(),
-            'type_of_membership_factor' => $this->string()->notNull(),
+            'expert_name' => $this->string()->notNull(),
+            'membership_function_type' => $this->string()->notNull(),
             'value' => $this->string()->notNull(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),

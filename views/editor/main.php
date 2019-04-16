@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 use app\models\FishboneDiagram;
 
-$this->title = Yii::t('app', 'HEADER_CREATE');
+$this->title = Yii::t('app', 'HEADER_CREATE') .": ". $model->name;
 ?>
 <div class="editor-main">
     <h1><?= Html::encode($this->title) ?></h1>

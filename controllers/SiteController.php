@@ -58,6 +58,7 @@ class SiteController extends Controller
 
     /*
      * Displays homepage.
+     * @return string
      */
     public function actionIndex()
     {
@@ -66,6 +67,7 @@ class SiteController extends Controller
 
     /*
      * Login action.
+     * @return string|\yii\web\Response
      */
     public function actionLogin()
     {
@@ -96,6 +98,7 @@ class SiteController extends Controller
 
     /*
      * Displays about page.
+     * @return string
      */
     public function actionAbout()
     {
@@ -104,6 +107,7 @@ class SiteController extends Controller
 
     /*
      * Displays help page.
+     * @return string|\yii\web\Response
      */
     public function actionHelp()
     {
@@ -121,6 +125,7 @@ class SiteController extends Controller
 
     /*
      * Displays documentation page.
+     * @return string
      */
     public function actionDocumentation()
     {
