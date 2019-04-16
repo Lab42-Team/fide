@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use \yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "{{%fuzzy_cause}}".
@@ -17,12 +18,12 @@ use yii\behaviors\TimestampBehavior;
  * @property int $updated_at
  * @property int $main_category_id
  *
- * @property AnalyticalMembershipFactor[] $analyticalMembershipFactors
+ * @property AnalyticalMembershipFunction[] $analyticalMembershipFunction
  * @property BaseScale[] $baseScales
  * @property MainCategory $mainCategory
- * @property TableMembershipFactor[] $tableMembershipFactors
+ * @property TableMembershipFunction[] $tableMembershipFunction
  */
-class FuzzyCause extends \yii\db\ActiveRecord
+class FuzzyCause extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -77,7 +78,7 @@ class FuzzyCause extends \yii\db\ActiveRecord
      */
     public function getAnalyticalMembershipFactors()
     {
-        return $this->hasMany(AnalyticalMembershipFactor::className(), ['fuzzy_cause_id' => 'id']);
+        return $this->hasMany(AnalyticalMembershipFunction::className(), ['fuzzy_cause_id' => 'id']);
     }
 
     /**
@@ -101,6 +102,6 @@ class FuzzyCause extends \yii\db\ActiveRecord
      */
     public function getTableMembershipFactors()
     {
-        return $this->hasMany(TableMembershipFactor::className(), ['fuzzy_cause_id' => 'id']);
+        return $this->hasMany(TableMembershipFunction::className(), ['fuzzy_cause_id' => 'id']);
     }
 }
