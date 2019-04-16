@@ -22,7 +22,8 @@ class m190325_041904_table_membership_factor extends Migration
             'fuzzy_cause_id' => $this->integer()->notNull(),
         ], $tableOptions);
 
-        $this->addForeignKey('fk_fuzzy_cause_id', '{{%table_membership_factor}}', 'fuzzy_cause_id', '{{%fuzzy_cause}}', 'id', 'CASCADE');
+        $this->addForeignKey('fk_fuzzy_cause_id', '{{%table_membership_factor}}', 'fuzzy_cause_id',
+            '{{%fuzzy_cause}}', 'id', 'CASCADE');
     }
 
     public function down()

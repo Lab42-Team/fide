@@ -17,7 +17,7 @@ class m190324_074157_problem extends Migration
         $this->createTable('{{%problem}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
-            'description' => $this->string(),
+            'description' => $this->text(),
             'certainty_factor' => $this->float()->notNull(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
@@ -25,7 +25,8 @@ class m190324_074157_problem extends Migration
         ], $tableOptions);
 
         $this->createIndex('idx_problem_name', '{{%problem}}', 'name');
-        $this->addForeignKey('fk_fishbone_diagram_id', '{{%problem}}', 'fishbone_diagram_id', '{{%fishbone_diagram}}', 'id', 'CASCADE');
+        $this->addForeignKey('fk_fishbone_diagram_id', '{{%problem}}', 'fishbone_diagram_id',
+            '{{%fishbone_diagram}}', 'id', 'CASCADE');
     }
 
     public function down()

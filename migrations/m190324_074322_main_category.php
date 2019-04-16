@@ -17,14 +17,15 @@ class m190324_074322_main_category extends Migration
         $this->createTable('{{%main_category}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
-            'description' => $this->string(),
+            'description' => $this->text(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
             'fishbone_diagram_id' =>$this->integer()->notNull(),
         ], $tableOptions);
 
         $this->createIndex('idx_main_category_name', '{{%main_category}}', 'name');
-        $this->addForeignKey('fk_fishbone_diagram_id', '{{%main_category}}', 'fishbone_diagram_id', '{{%fishbone_diagram}}', 'id', 'CASCADE');
+        $this->addForeignKey('fk_fishbone_diagram_id', '{{%main_category}}', 'fishbone_diagram_id',
+            '{{%fishbone_diagram}}', 'id', 'CASCADE');
     }
 
     public function down()

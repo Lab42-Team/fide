@@ -2,20 +2,16 @@
 
 namespace app\controllers;
 
-use app\models\FishboneDiagram;
-use app\models\FishboneDiagramSearch;
 use Yii;
-use yii\filters\AccessControl;
 use yii\web\Controller;
-use yii\web\NotFoundHttpException;
-use yii\web\Response;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
-
-
-
+/**
+ * SiteController implements the default main actions.
+ */
 class SiteController extends Controller
 {
     /**
@@ -60,13 +56,17 @@ class SiteController extends Controller
         ];
     }
 
-    /*Displays homepage.*/
+    /*
+     * Displays homepage.
+     */
     public function actionIndex()
     {
         return $this->render('index');
     }
 
-    /*Login action.*/
+    /*
+     * Login action.
+     */
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
@@ -77,12 +77,16 @@ class SiteController extends Controller
             return $this->goBack();
         }
         $model->password = '';
+
         return $this->render('login', [
             'model' => $model,
         ]);
     }
 
-    /*Logout action.*/
+    /**
+     * Logout action.
+     * @return \yii\web\Response
+     */
     public function actionLogout()
     {
         Yii::$app->user->logout();
@@ -90,14 +94,17 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    /*Displays about page.*/
+    /*
+     * Displays about page.
+     */
     public function actionAbout()
     {
         return $this->render('about');
     }
 
-    /*Displays help page.*/
-
+    /*
+     * Displays help page.
+     */
     public function actionHelp()
     {
         $model = new ContactForm();
@@ -106,16 +113,17 @@ class SiteController extends Controller
 
             return $this->refresh();
         }
+
         return $this->render('help', [
             'model' => $model,
         ]);
     }
 
-    /*Displays documentation page.*/
-
+    /*
+     * Displays documentation page.
+     */
     public function actionDocumentation()
     {
         return $this->render('documentation');
     }
-
 }

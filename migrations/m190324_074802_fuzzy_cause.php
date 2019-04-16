@@ -17,7 +17,7 @@ class m190324_074802_fuzzy_cause extends Migration
         $this->createTable('{{%fuzzy_cause}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
-            'description' => $this->string(),
+            'description' => $this->text(),
             'name_expert' => $this->string()->notNull(),
             'type_of_membership_factor' => $this->string()->notNull(),
             'value' => $this->string()->notNull(),
@@ -27,7 +27,8 @@ class m190324_074802_fuzzy_cause extends Migration
         ], $tableOptions);
 
         $this->createIndex('idx_fuzzy_cause_name', '{{%fuzzy_cause}}', 'name');
-        $this->addForeignKey('fk_main_category_id', '{{%fuzzy_cause}}', 'main_category_id', '{{%main_category}}', 'id', 'CASCADE');
+        $this->addForeignKey('fk_main_category_id', '{{%fuzzy_cause}}', 'main_category_id',
+            '{{%main_category}}', 'id', 'CASCADE');
     }
 
     public function down()
