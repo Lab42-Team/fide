@@ -16,7 +16,7 @@ class m190324_131706_aggravating_factor extends Migration
         $this->createTable('{{%aggravating_factor}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
-            'description' => $this->string(),
+            'description' => $this->text(),
             'value' => $this->string()->notNull(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
@@ -24,7 +24,8 @@ class m190324_131706_aggravating_factor extends Migration
         ], $tableOptions);
 
         $this->createIndex('idx_aggravating_factor_name', '{{%aggravating_factor}}', 'name');
-        $this->addForeignKey('fk_clear_cause_id', '{{%aggravating_factor}}', 'clear_cause_id', '{{%clear_cause}}', 'id', 'CASCADE');
+        $this->addForeignKey('fk_clear_cause_id', '{{%aggravating_factor}}', 'clear_cause_id',
+            '{{%clear_cause}}', 'id', 'CASCADE');
     }
 
     public function down()

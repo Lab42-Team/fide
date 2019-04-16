@@ -17,7 +17,7 @@ class m190324_131646_neutralizing_factor extends Migration
         $this->createTable('{{%neutralizing_factor}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
-            'description' => $this->string(),
+            'description' => $this->text(),
             'value' => $this->string()->notNull(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
@@ -25,7 +25,8 @@ class m190324_131646_neutralizing_factor extends Migration
         ], $tableOptions);
 
         $this->createIndex('idx_neutralizing_factor_name', '{{%neutralizing_factor}}', 'name');
-        $this->addForeignKey('fk_clear_cause_id', '{{%neutralizing_factor}}', 'clear_cause_id', '{{%clear_cause}}', 'id', 'CASCADE');
+        $this->addForeignKey('fk_clear_cause_id', '{{%neutralizing_factor}}', 'clear_cause_id',
+            '{{%clear_cause}}', 'id', 'CASCADE');
     }
 
     public function down()

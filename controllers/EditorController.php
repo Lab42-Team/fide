@@ -1,18 +1,20 @@
 <?php
 
-
 namespace app\controllers;
 
-
-use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
-use app\models\FishboneDiagram;
 
+/*
+ * EditorController implements the fide editor actions.
+ */
 class EditorController extends Controller
 {
     public $layout = 'editor';
 
+    /**
+     * {@inheritdoc}
+     */
     public function behaviors()
     {
         return [
@@ -34,15 +36,19 @@ class EditorController extends Controller
         ];
     }
 
-    /*Displays main editor page.*/
+    /*
+     * Displays main editor page.
+     */
     public function actionMain()
     {
         return $this->render('main');
     }
-    /*Displays export page.*/
+
+    /*
+     * Displays export page.
+     */
     public function actionExport()
     {
         return $this->render('export');
     }
-
 }

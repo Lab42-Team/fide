@@ -25,7 +25,8 @@ class m190324_132824_base_scale extends Migration
         ], $tableOptions);
 
         $this->createIndex('idx_base_scale_name', '{{%base_scale}}', 'name');
-        $this->addForeignKey('fk_fuzzy_cause_id', '{{%base_scale}}', 'fuzzy_cause_id', '{{%fuzzy_cause}}', 'id', 'CASCADE');
+        $this->addForeignKey('fk_fuzzy_cause_id', '{{%base_scale}}', 'fuzzy_cause_id',
+            '{{%fuzzy_cause}}', 'id', 'CASCADE');
     }
 
     public function down()

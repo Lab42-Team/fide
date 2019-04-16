@@ -23,7 +23,8 @@ class m190325_041941_analytical_membership_factor extends Migration
         ], $tableOptions);
 
         $this->createIndex('idx_analytical_membership_factor_name', '{{%analytical_membership_factor}}', 'type');
-        $this->addForeignKey('fk_fuzzy_cause_id', '{{%analytical_membership_factor}}', 'fuzzy_cause_id', '{{%fuzzy_cause}}', 'id', 'CASCADE');
+        $this->addForeignKey('fk_fuzzy_cause_id', '{{%analytical_membership_factor}}', 'fuzzy_cause_id',
+            '{{%fuzzy_cause}}', 'id', 'CASCADE');
     }
 
     public function down()
