@@ -34,8 +34,7 @@ $config = [
                 'diagrams' => 'site/diagrams',
                 '/fishbone-diagram/<_fd:(index|create|_form)>' => '/fishbone-diagram/<_fd>',
                 '/fishbone-diagram/<_fd:(view|update)>/<id:\d+>' => '/fishbone-diagram/<_fd>',
-                '/editor/<_ed:(main|export)>' => '/editor/<_ed>',
-
+                '/editor/<_ed:(main|export)>/<id:\d+>' => '/editor/<_ed>',
             ]
         ],
         'cache' => [

@@ -11,8 +11,6 @@ return [
     'NAV_LOGOUT' => 'Выход',
     'NAV_DIAGRAMS' => 'Диаграммы',
     'NAV_BACK' => 'Вернуться к списку',
-    'NAV_ADD' => 'Добавить',
-    'NAV_ADD_PROBLEM' => 'Добавить проблему',
     'NAV_ADD_CATEGORY' => 'Добавить категорию',
     'NAV_EXPORT' => 'Экспортировать',
 

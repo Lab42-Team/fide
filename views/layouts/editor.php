@@ -43,17 +43,8 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => Yii::t('app', 'NAV_BACK'),'url' => ['/fishbone-diagram/index']],
-            ['label' => Yii::t('app', 'NAV_ADD'),'items' => [
-                [
-                    'label' => Yii::t('app', 'NAV_ADD_PROBLEM'),
-                    'content' => ''
-                ],
-                [
-                    'label' => Yii::t('app', 'NAV_ADD_CATEGORY'),
-                    'content' => ''
-                ],
-            ]],
+            ['label' => Yii::t('app', 'NAV_BACK'), 'url' => ['/fishbone-diagram/index']],
+            ['label' => Yii::t('app', 'NAV_ADD_CATEGORY'), 'url' => '#'],
             ['label' => Yii::t('app', 'NAV_EXPORT'),'url' => ['/editor/export']],
             Yii::$app->user->isGuest ? (
             ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/site/login']]

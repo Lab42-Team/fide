@@ -11,8 +11,6 @@ return [
     'NAV_LOGOUT' => 'Logout',
     'NAV_DIAGRAMS' => 'Diagrams',
     'NAV_BACK' => 'Return to Diagrams',
-    'NAV_ADD' => 'Add',
-    'NAV_ADD_PROBLEM' => 'Add problem',
     'NAV_ADD_CATEGORY' => 'Add category',
     'NAV_EXPORT' => 'Export',
 

@@ -2,10 +2,11 @@
 
 namespace app\controllers;
 
-use app\models\FishboneDiagram;
+use Yii;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use app\models\FishboneDiagram;
 
 /*
  * EditorController implements the fide editor actions.
@@ -61,6 +62,6 @@ class EditorController extends Controller
         if (($model = FishboneDiagram::findOne($id)) !== null) {
             return $model;
         }
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException(Yii::t('app', 'ERROR_MESSAGE_PAGE_NOT_FOUND'));
     }
 }
