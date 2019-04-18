@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\FishboneDiagram;
 use app\models\FishboneDiagramSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -24,6 +25,21 @@ class FishboneDiagramController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'view', 'login'],
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'edit', 'logout'],
+                        'roles' => ['@'],
+                    ],
                 ],
             ],
         ];
@@ -115,9 +131,17 @@ class FishboneDiagramController extends Controller
         return $this->redirect(['index']);
     }
 
+    /**
+     * Redirect to diagram editor.
+     *
+     * @param $id
+     * @return \yii\web\Response
+     * @throws NotFoundHttpException
+     */
     public function actionEdit($id)
     {
         $model = $this->findModel($id);
+
         return $this->redirect(['/editor/main', 'id' => $model->id]);
     }
 
