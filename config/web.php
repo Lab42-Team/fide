@@ -28,7 +28,6 @@ $config = [
             'class'=>'app\components\LangUrlManager',
             'rules'=>[
                 'index' => 'site/index',
-                'about' => 'site/about',
                 'login' => 'site/login',
                 'help' => 'site/help',
                 'documentation' => 'site/documentation',

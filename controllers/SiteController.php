@@ -97,15 +97,6 @@ class SiteController extends Controller
     }
 
     /*
-     * Displays about page.
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
-    /*
      * Displays help page.
      * @return string|\yii\web\Response
      */

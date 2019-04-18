@@ -8,10 +8,8 @@ use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use app\components\widgets\WLang;
-use yii\bootstrap\ButtonDropdown;
 
 AppAsset::register($this);
 ?>
@@ -41,26 +39,22 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-
     echo "<form class='navbar-form navbar-right'>" . WLang::widget() . "</form>";
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => Yii::t('app', 'NAV_BACK'),'url' => ['/fishbone-diagram/index']],
-            ['label' => Yii::t('app', 'NAV_HOME'), 'url' => ['/site/index']],
-            ['label' => Yii::t('app', 'NAV_EXPORT'),'url' => ['/editor/export']],
-            ['label' => Yii::t('app', 'NAV_ADD'),'items' =>
-            [
+            ['label' => Yii::t('app', 'NAV_ADD'),'items' => [
                 [
                     'label' => Yii::t('app', 'NAV_ADD_PROBLEM'),
-                    'content' => ''],
+                    'content' => ''
+                ],
                 [
                     'label' => Yii::t('app', 'NAV_ADD_CATEGORY'),
                     'content' => ''
                 ],
-             ]
-         ],
-
+            ]],
+            ['label' => Yii::t('app', 'NAV_EXPORT'),'url' => ['/editor/export']],
             Yii::$app->user->isGuest ? (
             ['label' => Yii::t('app', 'NAV_LOGIN'), 'url' => ['/site/login']]
             ) : (
@@ -74,8 +68,6 @@ AppAsset::register($this);
             )
         ],
     ]);
-
-
     NavBar::end();
     ?>
 
