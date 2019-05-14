@@ -28,15 +28,13 @@ $config = [
             'class'=>'app\components\LangUrlManager',
             'rules'=>[
                 'index' => 'site/index',
-                'about' => 'site/about',
                 'login' => 'site/login',
                 'help' => 'site/help',
                 'documentation' => 'site/documentation',
                 'diagrams' => 'site/diagrams',
                 '/fishbone-diagram/<_fd:(index|create|_form)>' => '/fishbone-diagram/<_fd>',
                 '/fishbone-diagram/<_fd:(view|update)>/<id:\d+>' => '/fishbone-diagram/<_fd>',
-                '/editor/<_ed:(main|export)>' => '/editor/<_ed>',
-
+                '/editor/<_ed:(main|export)>/<id:\d+>' => '/editor/<_ed>',
             ]
         ],
         'cache' => [
@@ -98,6 +96,11 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
+    ];
+    $config['modules']['treemanager'] = [
+            'class' => '\kartik\tree\Module',
+            // other module settings, refer detailed documentation
+
     ];
 }
 

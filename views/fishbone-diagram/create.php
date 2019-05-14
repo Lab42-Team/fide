@@ -1,21 +1,27 @@
 <?php
 
-
 use yii\helpers\Html;
+use yii\web\View;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\FishboneDiagram */
+/* @var $modelProblem app\models\Problem */
+/* @var $modelCategory app\models\MainCategory */
+/* @var $form yii\widgets\ActiveForm */
 
 $this->title =  Yii::t('app', 'HEADER_CREATE');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'NAV_DIAGRAMS'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="fishbone-diagram-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+    <?= $this->render('_form', ['model' => $model,
+        'modelProblem' => $modelProblem,
+        'modelCategory' => $modelCategory])
+    ?>
 
 </div>

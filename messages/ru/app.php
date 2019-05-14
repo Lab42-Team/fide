@@ -12,7 +12,6 @@ return [
     'NAV_DIAGRAMS' => 'Диаграммы',
     'NAV_BACK' => 'Вернуться к списку',
     'NAV_ADD' => 'Добавить',
-    'NAV_ADD_PROBLEM' => 'Добавить проблему',
     'NAV_ADD_CATEGORY' => 'Добавить категорию',
     'NAV_EXPORT' => 'Экспортировать',
 
@@ -35,10 +34,14 @@ return [
     'BUTTON_SEARCH' => 'Найти',
     'BUTTON_RESET' => 'Сбросить',
     'BUTTON_EDIT' => 'Редактировать',
+    'BUTTON_NEXT' => 'Далее',
 
     /* Общие заголовки */
     'HEADER_UPDATE' => 'Обновить диаграмму:',
-    'HEADER_CREATE' => 'Создать диаграмму',
+    'HEADER_CREATE' => 'Создать диаграмму Исикава',
+    'HEADER_DIAGRAM' => 'Создать диаграмму',
+    'HEADER_PROBLEM' => 'Создать проблему',
+    'HEADER_CATEGORY' => 'Создать категорию',
     'WARNING' => 'Предупреждение!',
     'NOTICE_TITLE' => 'Обратите внимание',
     'NOTICE_TEXT' => 'на эту важную информацию.',
@@ -85,8 +88,8 @@ return [
     /* Сообщения LoginForm */
     'LOGIN_FORM_MESSAGE_INCORRECT_USERNAME_OR_PASSWORD' => 'Неверное имя пользователя или пароль.',
 
-    /* Модели
-    * Lang */
+    /* Модели */
+    /* Lang */
     'LANG_MODEL_ID' => 'ID',
     'LANG_MODEL_CREATED_AT' => 'Создан',
     'LANG_MODEL_UPDATED_AT' => 'Обновлен',
@@ -94,104 +97,82 @@ return [
     'LANG_MODEL_LOCAL' => 'Локаль',
     'LANG_MODEL_NAME' => 'Название',
     'LANG_MODEL_DEFAULT' => 'Язык по умолчанию',
-
-    /*Модели
-     *  FishboneDiagram */
+    /*  FishboneDiagram */
     'FISHBONE_DIAGRAM_MODEL_ID' => 'ID',
     'FISHBONE_DIAGRAM_MODEL_NAME' => 'Название диаграммы',
-    'FISHBONE_DIAGRAM_MODEL_DESCRIPTION' => 'Описание диаграммы',
-    'FISHBONE_DIAGRAM_MODEL_CREATED_AT' => 'Создан',
-    'FISHBONE_DIAGRAM_MODEL_UPDATED_AT' => 'Обновлен',
-
-    /*Модели
-     * AggravatingFactor*/
+    'FISHBONE_DIAGRAM_MODEL_DESCRIPTION' => 'Описание',
+    'FISHBONE_DIAGRAM_MODEL_CREATED_AT' => 'Создана',
+    'FISHBONE_DIAGRAM_MODEL_UPDATED_AT' => 'Обновлена',
+    /* AggravatingFactor */
     'AGGRAVATING_FACTOR_ID' => 'ID',
-    'AGGRAVATING_FACTOR_NAME' => 'Название усугубляющего фактора',
-    'AGGRAVATING_FACTOR_DESCRIPTION' => 'Описание фактора',
+    'AGGRAVATING_FACTOR_NAME' => 'Название',
+    'AGGRAVATING_FACTOR_DESCRIPTION' => 'Описание',
     'AGGRAVATING_FACTOR_VALUE' => 'Значение',
     'AGGRAVATING_FACTOR_CREATED_AT' => 'Создан',
     'AGGRAVATING_FACTOR_UPDATED_AT' => 'Обновлен',
-    'AGGRAVATING_FACTOR_CLEAR_CAUSE_ID' => 'ID Четкой причины',
-
-    /* Модели
-     * AnalyticalMembershipFactor*/
+    'AGGRAVATING_FACTOR_CLEAR_CAUSE_ID' => 'ID четкой причины',
+    /* AnalyticalMembershipFactor */
     'ANALYTICAL_MEMBERSHIP_FUNCTION_ID' => 'ID',
-    'ANALYTICAL_MEMBERSHIP_FUNCTION_TYPE' => 'Тип функции принадлежности ',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_TYPE' => 'Тип функции принадлежности',
     'ANALYTICAL_MEMBERSHIP_FUNCTION_VALUE' => 'Значение',
-    'ANALYTICAL_MEMBERSHIP_FUNCTION_CREATED_AT' => 'Создан',
-    'ANALYTICAL_MEMBERSHIP_FUNCTION_UPDATED_AT' => 'Обновлен',
-    'ANALYTICAL_MEMBERSHIP_FUNCTION_FUZZY_CAUSE_ID' => 'ID Четкой причины',
-
-    /* Модели
-     * BaseScale*/
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_CREATED_AT' => 'Создана',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_UPDATED_AT' => 'Обновлена',
+    'ANALYTICAL_MEMBERSHIP_FUNCTION_FUZZY_CAUSE_ID' => 'ID четкой причины',
+    /* BaseScale */
     'BASE_SCALE_ID' => 'ID',
-    'BASE_SCALE_NAME' => 'Название базовой шкалы',
-    'BASE_SCALE_RANGE' => 'Диапазон базовой шкалы',
-    'BASE_SCALE_UNIT' => 'Единица измерения',
+    'BASE_SCALE_NAME' => 'Название',
+    'BASE_SCALE_RANGE' => 'Диапазон',
+    'BASE_SCALE_UNIT' => 'Единицы измерения',
     'BASE_SCALE_VALUE' => 'Значение',
-    'BASE_SCALE_CREATED_AT' => 'Создан',
-    'BASE_SCALE_UPDATED_AT' => 'Обновлен',
-    'BASE_SCALE_FUZZY_CAUSE_ID' => 'ID Нечеткой причины',
-
-    /*Модели
-    * ClearCause*/
+    'BASE_SCALE_CREATED_AT' => 'Создана',
+    'BASE_SCALE_UPDATED_AT' => 'Обновлена',
+    'BASE_SCALE_FUZZY_CAUSE_ID' => 'ID нечеткой причины',
+    /* ClearCause */
     'CLEAR_CAUSE_ID' => 'ID',
-    'CLEAR_CAUSE_NAME' => 'Название четкой причины',
-    'CLEAR_CAUSE_DESCRIPTION' => 'Описание четкой причины',
+    'CLEAR_CAUSE_NAME' => 'Название',
+    'CLEAR_CAUSE_DESCRIPTION' => 'Описание',
     'CLEAR_CAUSE_CERTAINTY_FACTOR' => 'Коэффициент уверенности',
-    'CLEAR_CAUSE_CREATED_AT' => 'Created at',
-    'CLEAR_CAUSE_UPDATED_AT' => 'Updated at',
-    'CLEAR_CAUSE_MAIN_CATEGORY_ID' => 'ID Основной категории',
-
-    /*Модели
-   * FuzzyCause*/
+    'CLEAR_CAUSE_CREATED_AT' => 'Создана',
+    'CLEAR_CAUSE_UPDATED_AT' => 'Обновлена',
+    'CLEAR_CAUSE_MAIN_CATEGORY_ID' => 'ID основной категории',
+    /* FuzzyCause */
     'FUZZY_CAUSE_ID' => 'ID',
-    'FUZZY_CAUSE_NAME' => 'Название нечеткой причины',
-    'FUZZY_CAUSE_DESCRIPTION' => 'Описание нечеткой причины',
+    'FUZZY_CAUSE_NAME' => 'Название',
+    'FUZZY_CAUSE_DESCRIPTION' => 'Описание',
     'FUZZY_CAUSE_NAME_EXPERT' => 'ФИО эксперта',
     'FUZZY_CAUSE_MEMBERSHIP_FUNCTION_TYPE' => 'Вид функции принадлежности',
     'FUZZY_CAUSE_VALUE' => 'Значение',
-    'FUZZY_CAUSE_CREATED_AT' => 'Создан',
-    'FUZZY_CAUSE_UPDATED_AT' => 'Обновлен',
-    'FUZZY_CAUSE_MAIN_CATEGORY_ID' => 'ID Основной категории',
-
-    /*Модели
-    * MainCategory*/
+    'FUZZY_CAUSE_CREATED_AT' => 'Создана',
+    'FUZZY_CAUSE_UPDATED_AT' => 'Обновлена',
+    'FUZZY_CAUSE_MAIN_CATEGORY_ID' => 'ID основной категории',
+    /* MainCategory */
     'MAIN_CATEGORY_ID' => 'ID',
     'MAIN_CATEGORY_NAME' => 'Название категории',
-    'MAIN_CATEGORY_DESCRIPTION' => 'Описание категории',
-    'MAIN_CATEGORY_CREATED_AT' => 'Создан',
-    'MAIN_CATEGORY_UPDATED_AT' => 'Обновлен',
+    'MAIN_CATEGORY_DESCRIPTION' => 'Описание',
+    'MAIN_CATEGORY_CREATED_AT' => 'Создана',
+    'MAIN_CATEGORY_UPDATED_AT' => 'Обновлена',
     'MAIN_CATEGORY_FISHBONE_DIAGRAM_ID' => 'ID диаграммы',
-
-    /*Модели
-    * NeutralizingFactor*/
+    /* NeutralizingFactor */
     'NEUTRALIZING_FACTOR_ID' => 'ID',
-    'NEUTRALIZING_FACTOR_NAME' => 'Название нетрализующего фактора',
-    'NEUTRALIZING_FACTOR_DESCRIPTION' => 'Описание нетрализующего фактора',
+    'NEUTRALIZING_FACTOR_NAME' => 'Название',
+    'NEUTRALIZING_FACTOR_DESCRIPTION' => 'Описание',
     'NEUTRALIZING_FACTOR_VALUE' => 'Значение',
     'NEUTRALIZING_FACTOR_CREATED_AT' => 'Создан',
     'NEUTRALIZING_ACTOR_UPDATED_AT' => 'Обновлен',
     'NEUTRALIZING_FACTOR_CLEAR_CAUSE_ID' => 'ID четкой причины',
-
-    /*Модели
-    * Problem*/
+    /* Problem */
     'PROBLEM_ID' => 'ID',
     'PROBLEM_NAME' => 'Название проблемы',
-    'PROBLEM_DESCRIPTION' => 'Описание проблемы',
+    'PROBLEM_DESCRIPTION' => 'Описание',
     'PROBLEM_CERTAINTY_FACTOR' => 'Коэффициент уверенности',
-    'PROBLEM_CREATED_AT' => 'Создан',
-    'PROBLEM_UPDATED_AT' => 'Обновлен',
+    'PROBLEM_CREATED_AT' => 'Создана',
+    'PROBLEM_UPDATED_AT' => 'Обновлена',
     'PROBLEM_FISHBONE_DIAGRAM_ID' => 'ID диаграммы',
-
-    /*Модели
-     * TableMembershipFactor*/
+    /* TableMembershipFactor */
     'TABLE_MEMBERSHIP_FUNCTION_ID' => 'ID',
     'TABLE_MEMBERSHIP_FUNCTION_VALUE' => 'Значение',
     'TABLE_MEMBERSHIP_FUNCTION_COEFFICIENT' => 'Коэффициент',
     'TABLE_MEMBERSHIP_FUNCTION_CREATED_AT' => 'Создан',
     'TABLE_MEMBERSHIP_FUNCTION_UPDATED_AT' => 'Обновлен',
     'TABLE_MEMBERSHIP_FUNCTION_FUZZY_CAUSE_ID' => 'ID нечеткой причины',
-
-
 ];

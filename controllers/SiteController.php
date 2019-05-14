@@ -20,6 +20,12 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout'],
@@ -29,12 +35,6 @@ class SiteController extends Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
                 ],
             ],
         ];
@@ -94,15 +94,6 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
-    }
-
-    /*
-     * Displays about page.
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
     }
 
     /*

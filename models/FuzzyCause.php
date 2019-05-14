@@ -7,12 +7,13 @@ use yii\behaviors\TimestampBehavior;
 use \yii\db\ActiveRecord;
 
 /**
+ *
  * This is the model class for table "{{%fuzzy_cause}}".
  *
  * @property int $id
  * @property string $name
- * @property string $name_expert
- * @property string $type_of_membership_factor
+ * @property string $expert_name
+ * @property string $membership_function_type
  * @property string $value
  * @property int $created_at
  * @property int $updated_at

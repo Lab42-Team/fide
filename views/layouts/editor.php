@@ -47,12 +47,9 @@ AppAsset::register($this);
         'items' => [
             ['label' => Yii::t('app', 'NAV_BACK'),'url' => ['/fishbone-diagram/index']],
             ['label' => Yii::t('app', 'NAV_HOME'), 'url' => ['/site/index']],
-            ['label' => Yii::t('app', 'NAV_EXPORT'),'url' => ['/editor/export']],
+            //['label' => Yii::t('app', 'NAV_EXPORT'),'url' => ['/editor/export']],
             ['label' => Yii::t('app', 'NAV_ADD'),'items' =>
             [
-                [
-                    'label' => Yii::t('app', 'NAV_ADD_PROBLEM'),
-                    'content' => ''],
                 [
                     'label' => Yii::t('app', 'NAV_ADD_CATEGORY'),
                     'content' => ''

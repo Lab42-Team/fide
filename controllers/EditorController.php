@@ -2,10 +2,13 @@
 
 namespace app\controllers;
 
-use app\models\FishboneDiagram;
+use app\models\Menu;
+use Yii;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use app\models\FishboneDiagram;
 
 /*
  * EditorController implements the fide editor actions.
@@ -20,10 +23,25 @@ class EditorController extends Controller
     public function behaviors()
     {
         return [
-                'verbs' => [
+            'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['login'],
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['main', 'export', 'logout'],
+                        'roles' => ['@'],
+                    ],
                 ],
             ],
         ];
@@ -43,9 +61,10 @@ class EditorController extends Controller
      */
     public function actionMain($id)
     {
+        $query = Menu::find()->where(['depth' => '0']);
 
         return $this->render('main', [
-            'model' =>  $this->findModel($id)]);
+            'model' =>  $this->findModel($id), 'query' => $query]);
     }
 
     /*
@@ -61,6 +80,6 @@ class EditorController extends Controller
         if (($model = FishboneDiagram::findOne($id)) !== null) {
             return $model;
         }
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException(Yii::t('app', 'ERROR_MESSAGE_PAGE_NOT_FOUND'));
     }
 }
